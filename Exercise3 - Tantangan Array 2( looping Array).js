@@ -19,6 +19,8 @@ function dataHandling(input) {
       }
     }
     console.log("-------------------");
-    return;
   }
+  return input;
 }
+
+console.log(dataHandling(input));
