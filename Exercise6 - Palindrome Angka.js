@@ -1,25 +1,53 @@
-// function palindrome(kata) {
-var temp1 = "";
-var temp2 = "";
-var result = "";
-var kata = "kasur rusak";
+// // function angkaPalindrome(num) {
+// var num = 121;
+// var temp1 = "";
+// var temp2 = "";
+// var angka = String(result);
+// var result = "";
 
-for (var i = 0; i < kata.length; i++) {
-  if (kata[i] >= "a" && kata[i] <= "z") {
-    var temp1 = temp1 + kata[i];
-  }
-}
+// for (var k = 0; k < 10; k++) {
+//   var result = num + 1;
+//   for (var i = 0; i < angka.length; i++) {
+//     temp1 += angka[i];
+//   }
+//   for (var j = angka.length - 1; j >= 0; j--) {
+//     temp2 += angka[j];
+//   }
+//   if (temp1 === temp2) {
+//     console.log("ini udah palindrome");
+//   } else {
+//     result = num + 1;
+//   }
 
-for (var j = kata.length - 1; j >= 0; j--) {
-  if (kata[j] >= "a" && kata[j] <= "z") {
-    var temp2 = temp2 + kata[j];
-  }
-}
-if (temp1 === temp2) {
-  console.log(true);
-} else {
-  console.log(false);
-}
-
-//     return
+//   console.log(result);
 // }
+
+// TEST CASES
+// console.log(angkaPalindrome(8)); // 9
+// console.log(angkaPalindrome(10)); // 11
+// console.log(angkaPalindrome(117)); // 121
+// console.log(angkaPalindrome(175)); // 181
+// console.log(angkaPalindrome(1000)); // 1001
+
+// for (var k = 0; k !== true ; i++) {
+//   tambah = num + 1;
+//   if (String(tambah) == true) {
+
+var num = 88428;
+
+var string = String(num);
+
+var temp1 = "";
+
+var tempor = "";
+
+for (var i = 0; i < string.length; i++) {
+  temp1 += string[i];
+}
+
+for (var j = string.length; j >= 0; j--) {
+  tempor += string[j];
+}
+
+console.log(temp1);
+console.log(tempor);
