@@ -6,4 +6,5 @@ function balikString(string) {
   return temp;
 }
 
+//TEST CASE
 console.log(balikString("hello world!"));
