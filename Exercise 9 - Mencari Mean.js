@@ -1,11 +1,10 @@
 function cariMean(arr) {
-  var num = arr;
   var temp = 0;
 
-  for (var i = 0; i < num.length; i++) {
-    temp += num[i];
+  for (var i = 0; i < arr.length; i++) {
+    temp += arr[i];
   }
-  return Math.round(temp / num.length);
+  return Math.round(temp / arr.length);
 }
 
 // TEST CASES
