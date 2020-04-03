@@ -1,11 +1,4 @@
 function tentukanDeretAritmatika(arr) {
-  // var arr = [1, 2, 3, 4, 5, 6];
-  // var temp = "";
-  // for (var i = 0; i < arr.length; i + Math.abs(arr[0] - arr[1])) {
-  //   temp = arr[i];
-  // }
-  // console.log(temp);
-
   var result = "";
 
   var pola = arr[1] - arr[0];
