@@ -1,26 +1,29 @@
-var input = [
-  ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"],
-  ["0002", "Dika Sembiring", "Medan", "10/10/1992", "Bermain Gitar"],
-  ["0003", "Winona", "Ambon", "25/12/1965", "Memasak"],
-  ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
-];
-
 function dataHandling(input) {
-  for (var i = 0; i < input.length; i++) {
-    for (var j = 0; j < input[i].length; j++) {
+  var list = input;
+  var result = "";
+
+  for (var i = 0; i < list.length; i++) {
+    for (var j = 0; j < list[i].length; j++) {
       if (j == 0) {
-        console.log("ID: " + input[i][j]);
+        result += `ID: ${list[i][j]} \n`;
       } else if (j == 1) {
-        console.log("Nama Lengkap: " + input[i][j]);
+        result += `Nama Lengkap: ${list[i][j]} \n`;
       } else if (j == 2) {
-        console.log("TTL: " + input[i][j] + " " + input[i][j + 1]);
+        result += `TTL: ${list[i][j]} ${list[i][j + 1]} \n`;
       } else if (j == 4) {
-        console.log("Hobi: " + input[i][j]);
+        result += `Hobi: ${list[i][j]}\n\n`;
       }
     }
-    console.log("-------------------");
   }
-  return input;
+  return result;
 }
 
-console.log(dataHandling(input));
+//TEST CASE
+console.log(
+  dataHandling([
+    ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"],
+    ["0002", "Dika Sembiring", "Medan", "10/10/1992", "Bermain Gitar"],
+    ["0003", "Winona", "Ambon", "25/12/1965", "Memasak"],
+    ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
+  ])
+);
