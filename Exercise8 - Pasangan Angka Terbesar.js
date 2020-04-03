@@ -1,45 +1,28 @@
-// function pasanganTerbesar(num) {
-//   var string = String(num);
-//   var temp = "";
-//   var result = 0;
-
-//   for (var i = 0; i < `${num}`.length; i++) {
-//     for (var j = 0; j < `${num}`.length - 1; j++) {
-//       if (string[j] < string[j + 1]) {
-//         var temp = string[j + 1];
-//         string[j + 1] = string[j];
-//         string[j] = temp;
-//       }
-//     }
-//   }
-//   return string;
-// }
-
-// console.log(pasanganTerbesar(641573));
-
-// var num = 641573;
-// var string = String(num);
-
-// string[].sort();
-
-// console.log(string);
-
 function pasanganTerbesar(num) {
-  var string = String(num).split("");
-  var length = string.length;
+  var string = num.toString();
 
-  for (let i = 0; i < length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (string[j] > string[j + 1]) {
-        //Swap the numbers
-        var tmp = string[j]; //Temporary variable to hold the current number
-        string[j] = string[j + 1]; //Replace current number with adjacent number
-        string[j + 1] = tmp; //Replace adjacent number with current number
+  arrTampung = [];
+
+  for (var i = 0; i < string.length - 1; i++) {
+    var temp = "";
+    temp += string[i] + string[i + 1];
+    arrTampung.push(temp);
+  }
+
+  for (var i = 0; i < arrTampung.length; i++) {
+    for (var j = 0; j < arrTampung.length - 1; j++) {
+      if (arrTampung[j] < arrTampung[j + 1]) {
+        var temp = arrTampung[j + 1];
+        arrTampung[j + 1] = arrTampung[j];
+        arrTampung[j] = temp;
       }
     }
   }
-
-  return string.toString().replace(/,/g, "");
+  return arrTampung[0];
 }
-
-console.log(pasanganTerbesar(641573));
+// TEST CASES
+console.log(pasanganTerbesar(641573)); // 73
+console.log(pasanganTerbesar(12783456)); // 83
+console.log(pasanganTerbesar(910233)); // 91
+console.log(pasanganTerbesar(71856421)); // 85
+console.log(pasanganTerbesar(79918293)); // 99
