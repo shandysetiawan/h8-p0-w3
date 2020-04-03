@@ -1,111 +1,90 @@
-var list = [
-  "0001",
-  "Roman Alamsyah",
-  "Bandar Lampung",
-  "21/05/1989",
-  "Membaca"
-];
+function dataHandling2(list) {
+  list.splice(1, 1, `${list[1]} Elsharawy`);
+  list.splice(2, 1, `Provinsi ${list[2]}`);
+  list.splice(list.length - 1, 1, "Pria", "SMA Internasional Metro");
 
-function dataHandling2() {
-  const temp = [ID, nama, asal, kota, tanggal, lahir, hobi];
+  console.log(list);
 
-  return list;
+  var date = list[3].split("/");
+  var month = "";
+
+  switch (Number(date[1])) {
+    case 01: {
+      month = "Januari";
+      break;
+    }
+    case 02: {
+      month = "Februari";
+      break;
+    }
+    case 03: {
+      month = "Maret";
+      break;
+    }
+    case 04: {
+      month = "April";
+      break;
+    }
+    case 05: {
+      month = "Mei";
+      break;
+    }
+    case 06: {
+      month = "Juni";
+      break;
+    }
+    case 07: {
+      month = "Juli";
+      break;
+    }
+    case 08: {
+      month = "Agustus";
+      break;
+    }
+    case 09: {
+      month = "September";
+      break;
+    }
+    case 10: {
+      month = "Oktober";
+      break;
+    }
+    case 11: {
+      month = "November";
+      break;
+    }
+    case 12: {
+      month = "Desember";
+      break;
+    }
+    default: {
+      month = "masukan bulan angka-12";
+      break;
+    }
+  }
+  console.log(month);
+
+  date.sort(function(value1, value2) {
+    return value2 - value1;
+  });
+
+  console.log(date);
+
+  console.log(date.join("-"));
+
+  var name = list[1];
+  var cutName = name.slice(0, 14);
+
+  console.log(cutName);
 }
 
-console.log(dataHandling2());
-
-// for (var i = 0; i < list.length; i++) {
-//   list2 = list2 + list[i];
-// }
-
-// console.log(list2);
-
-// list.splice(1, 2, "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung"),
-//   list.splice(4, 1, "Pria", "SMA Internasional Metro");
-
-// console.log(list);
-
-// var list2 = [
-//   "0001",
-//   "Roman Alamsyah",
-//   "Bandar Lampung",
-//   "21/05/1989",
-//   "Membaca"
-// ];
-
-// var ttl = list2[3];
-
-// var ttl2 = 0;
-
-// ttl2 = ttl.split("/", 3);
-
-// switch (Number(ttl2[1])) {
-//   case 01: {
-//     console.log(`Januari`);
-//     break;
-//   }
-//   case 02: {
-//     console.log(`Februari`);
-//     break;
-//   }
-//   case 03: {
-//     console.log(`Maret`);
-//     break;
-//   }
-//   case 04: {
-//     console.log(`April`);
-//     break;
-//   }
-//   case 05: {
-//     console.log(`Mei`);
-//     break;
-//   }
-//   case 06: {
-//     console.log(`Juni`);
-//     break;
-//   }
-//   case 07: {
-//     console.log(`Juli`);
-//     break;
-//   }
-//   case 08: {
-//     console.log(`Agustus`);
-//     break;
-//   }
-//   case 09: {
-//     console.log(`September`);
-//     break;
-//   }
-//   case 10: {
-//     console.log(`Oktober`);
-//     break;
-//   }
-//   case 11: {
-//     console.log(`November`);
-//     break;
-//   }
-//   case 12: {
-//     console.log(`Desember`);
-//     break;
-//   }
-// }
-
-// ttl2.sort(function(value1, value2) {
-//   return value2 - value1;
-// });
-
-// console.log(ttl2);
-
-// console.log(ttl2.join("-"));
-
-var list2 = [
+//TEST CASE
+var input = [
   "0001",
   "Roman Alamsyah",
   "Bandar Lampung",
   "21/05/1989",
   "Membaca"
 ];
-var nama = list2[1];
 
-nama.slice(0, 16);
-// console.log(nama);
+dataHandling2(input);
