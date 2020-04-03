@@ -1,27 +1,25 @@
-var num = 88428;
+function angkaPalindrome(num) {
+  var result = "";
 
-var string = String(num + 1);
-var temp1 = "";
-var temp2 = "";
-var result = ";";
-var string2 = "";
-var palindrome = "";
-
-for (var i = 0; i < string.length; i++) {
-  temp1 += string[i];
-}
-for (var j = string.length - 1; j >= 0; j--) {
-  temp2 += string[j];
-}
-if (temp1 == temp2) {
-  result = string;
-} else {
   var palindrome = false;
-  while (palindrome === false) {
+  while (palindrome == false) {
     num++;
-    var string2 = String(num);
-    result = string2;
+    var string = String(num);
+    var temp = "";
+
+    for (var i = string.length - 1; i >= 0; i--) {
+      temp += string[i];
+    }
+    if (string === temp) {
+      palindrome = true;
+    }
   }
+  return num;
 }
 
-// console.log(result);
+// TEST CASES
+console.log(angkaPalindrome(8)); // 9
+console.log(angkaPalindrome(10)); // 11
+console.log(angkaPalindrome(117)); // 121
+console.log(angkaPalindrome(175)); // 181
+console.log(angkaPalindrome(1000)); // 1001
